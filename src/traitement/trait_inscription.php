@@ -6,7 +6,7 @@ require_once '../Repository/UtilisateursRepository.php';
 
 if (empty($_POST["nom"]) || empty($_POST["prenom"]) || empty($_POST["email"]) || empty($_POST["mot_de_passe"])) {
     echo "C'est pas bien ...";
-    header("Location: ../../vue/InscriptionEM.php");
+    header("Location: ../../vue/Inscription.php");
     exit();
 } else {
     $utilisateurs = new Utilisateurs([
