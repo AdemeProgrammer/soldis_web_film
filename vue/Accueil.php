@@ -17,6 +17,7 @@ if (!isset($_SESSION['email'])) {
     <h1>Soldis Web Film : <?= $_SESSION['nom'] ?> <?= $_SESSION['prenom'] ?></h1>
     <nav>
         <a href="#">Accueil</a>
+        <a href="Catalogue.php">Catalogue</a>
         <a href="Deconnexion.php">Déconnexion</a>
     </nav>
 </header>
