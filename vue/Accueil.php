@@ -1,64 +1,48 @@
 <?php
 session_start();
 if (!isset($_SESSION['email'])) {
-    header('location: ../vue/ConnexionEM.php');
+    header('location: ../vue/Connexion.php');
 }
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soldis Web Film</title>
-
+    <link rel="stylesheet" href="../assets/css/accueil.css">
 </head>
-
 <body>
 <header>
-    <h1>Soldis Web Film : <?= $_SESSION['nom']?> <?= $_SESSION['prenom']?></h1>
+    <h1>Soldis Web Film : <?= $_SESSION['nom'] ?> <?= $_SESSION['prenom'] ?></h1>
     <nav>
         <a href="#">Accueil</a>
+        <a href="Deconnexion.php">Déconnexion</a>
     </nav>
 </header>
 
-<section class="hero">
-    <div>
+<main>
+    <section class="hero">
         <h2>Bienvenue dans un monde cinématographique d'exception</h2>
-        <button onclick="window.location.href='CatalogueEM.php'">Découvrez nos films</button>
-    </div>
-</section>
+    </section>
 
-<section id="films" class="films-section">
-    <h3>Nos films à l'affiche</h3>
-    <div class="film-container">
-        <div class="film">
-            <a href="https://www.youtube.com/watch?v=0tC4k1BRJdY"><img src="../assets/img/F4.webp" alt="Film 1"></a>
+    <section id="films" class="films-section">
+        <h3>Nos meilleurs films :</h3>
+        <div class="film-container">
+            <div class="film"><a href="https://youtu.be/5UnjrG_N8hU?si=JIiruE9KN76fipfx"><img src="https://wallpapercave.com/wp/wp3054783.jpg" alt="Film 1"></a></div>
+            <div class="film"><a href="https://youtu.be/_OUWtPhDQpk?si=IVc-BFN8veLsMim2"><img src="https://image.api.playstation.com/vulcan/ap/rnd/202308/1103/8c3ce3611a4bb187418bb5e24924a055ba33d3046a7aaacb.png" alt="Film 2"></a></div>
+            <div class="film"><a href="https://youtu.be/1NJO0jxBtMo?si=Q35NgK6qolASYsHd"><img src="https://th.bing.com/th/id/R.fefad836928e4f750f07c96434b5f608?rik=I8vIKOw4%2fWzXHw&riu=http%3a%2f%2fwww.simbasible.com%2fwp-content%2fuploads%2f2015%2f08%2fBraveheart3.jpg&ehk=aUOV4pdyDjPWu1sbvdgEe9T1XZEiOb4qZqRykjKPDNg%3d&risl=&pid=ImgRaw&r=0" alt="Film 3"></a></div>
+            <div class="film"><a href="https://youtu.be/iAjn_UViuE0?si=l1RFxTxSg8dSyCo1"><img src="https://fusion.molotov.tv/arts/i/446x588/Ch8SHQoUZRkyDnEpTtRW_McDabK2WPPb6Y0SA2pwZxgBCh8IARIbChTSu6PF61HREVgWD30NwZHPO7lyDRIDcG5n/jpg" alt="Film 4"></a></div>
+            <div class="film"><a href="https://youtu.be/EXeTwQWrcwY?si=0Hkc5aeIQgLrNxVm"><img src="https://th.bing.com/th/id/R.7dbd4025fc6c8439d07709fcee217edb?rik=pB523TybeWhTGw&pid=ImgRaw&r=0" alt="Film 5"></a></div>
+            <div class="film"><a href="https://youtu.be/Eam4YDTTkdI?si=Jd6qzMeRMn6F-PwC"><img src="https://th.bing.com/th/id/R.4dd98a3696c8fbbf7f5a13aa119cfc8c?rik=E%2bALJGXfVBe%2bCg&riu=http%3a%2f%2ffr.web.img5.acsta.net%2fpictures%2f20%2f08%2f03%2f10%2f14%2f5958342.jpg&ehk=g491iFVicGFwZiU5KX9kRqf%2fqcKB%2fqyzrvC63GPLASk%3d&risl=&pid=ImgRaw&r=0" alt="Film 6"></a></div>
         </div>
-        <div class="film">
-            <a href="https://www.youtube.com/watch?v=gKXFUSBBJL0"><img src="../assets/img/topgun.webp" alt="Film 2"></a>
-        </div>
-        <div class="film">
-            <a href="https://www.youtube.com/watch?v=73_1biulkYk"><img src="../assets/img/deadpool3.webp" alt="Film 3"></a>
-        </div>
-        <div class="film">
-            <a href="https://www.youtube.com/watch?v=-BLM1naCfME"><img src="../assets/img/Tetris.jpg" alt="Film 4"></a>
-        </div>
-        <div class="film">
-            <a href="https://www.youtube.com/watch?v=zSWdZVtXT7E"><img src="../assets/img/Inter.jpg" alt="Film 5"></a>
-        </div>
-        <div class="film">
-            <a href="https://www.youtube.com/watch?v=TQ-9We-lxiA"><img src="../assets/img/sonic3.jpg" alt="Film 6"></a>
-        </div>
-    </div>
-</section>
-
-<section id="contact" class="contact-section">
-</section>
+    </section>
+</main>
 
 <footer>
     <hr>
-    <h1>Paramètre de compte :</h1>
-    <a href="Deconnexion.php"><p>Deconnexion du compte</p></a>
+    <p>Connecté en tant que <?= $_SESSION['prenom'] ?> <?= $_SESSION['nom'] ?> | <a href="Deconnexion.php">Déconnexion</a></p>
 </footer>
-
 </body>
 </html>
+
