@@ -1,5 +1,5 @@
 <?php
 session_start();
 session_destroy();
-header('Location:Connexion.php');
+header('Location:vue/Connexion.php');
 ?>

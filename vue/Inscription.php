@@ -7,8 +7,6 @@
 
 </head>
 <body>
-
-<div class="imagedefond">
     <h2 class="form-title">Inscription</h2>
     <form method="POST" class="register-form" id="register-form" action="../src/traitement/trait_ajout.php">
         <div class="form-group">
@@ -36,16 +34,9 @@
         <div class="form-group form-button">
             <input type="submit" name="signup" id="signup" class="form-submit" value="S'inscrire"/>
         </div>
-        <style>
-            body{
-                background-color: black;
-            }
-        </style>
-
 
 
     </form>
-</div>
 <a href="Connexion.php">Je suis déjà membre</a>
 </body>
 </html>

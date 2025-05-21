@@ -20,20 +20,6 @@
         <input type="password" name="mot_de_passe" id="mot_de_passe" placeholder="Votre mot de passe" required/>
     </div>
     <input type = "submit" name ="validation">
-    <style>
-        body{
-            background-color: black;
-        }
-        h1 {
-            color: gold;
-            font-size: 3rem;
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            margin: 0;
-            letter-spacing: 1px;
-        }
-    </style>
 
 </form>
 <a href ="Inscription.php"><p>Vous n'êtes pas un membre majestueux ?</p></a>
