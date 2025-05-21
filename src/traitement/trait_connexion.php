@@ -2,7 +2,7 @@
 require_once '../bdd/Bdd.php';
 require_once '../../vue/Connexion.php';
 require_once '../modele/Utilisateurs.php';
-require_once '../Repository/UtilisateursRepository.php';
+require_once '../repository/UtilisateursRepository.php';
 
 if (!isset($_POST["email"]) || !isset($_POST["mot_de_passe"]) || empty($_POST["email"]) || empty($_POST["mot_de_passe"])) {
     echo "C'est pas bien, vous avez laissé une case vide";

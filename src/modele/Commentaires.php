@@ -1,7 +1,5 @@
 <?php
 
-namespace modele;
-
 class Commentaires
 {
     private $id_commentaire;
@@ -110,5 +108,22 @@ class Commentaires
     public function setRefUtilisateur($ref_utilisateur)
     {
         $this->ref_utilisateur = $ref_utilisateur;
+    }
+
+    public function __construct(array $donnee){
+        $this->hydrate($donnee);
+    }
+
+    public function hydrate(array $donnees)
+    {
+        foreach ($donnees as $key => $valeur)
+        {
+            $methode = 'set'.ucfirst($key);
+
+            if (method_exists($this, $methode))
+            {
+                $this->$methode($valeur);
+            }
+        }
     }
 }

@@ -8,7 +8,7 @@
 </head>
 <body>
     <h2 class="form-title">Inscription</h2>
-    <form method="POST" class="register-form" id="register-form" action="../src/traitement/trait_ajout.php">
+    <form method="POST" class="register-form" id="register-form" action="../src/traitement/trait_inscription.php">
         <div class="form-group">
             <label for="nom"><i class="zmdi zmdi-account "></i></label>
             <input type="text" name="nom" id="nom" placeholder="Votre nom" required/>

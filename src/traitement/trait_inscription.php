@@ -2,10 +2,9 @@
 require_once '../bdd/Bdd.php';
 require_once '../../vue/Inscription.php';
 require_once '../modele/Utilisateurs.php';
-require_once '../Repository/UtilisateursRepository.php';
+require_once '../repository/UtilisateursRepository.php';
 
 if (empty($_POST["nom"]) || empty($_POST["prenom"]) || empty($_POST["email"]) || empty($_POST["mot_de_passe"])) {
-    echo "C'est pas bien ...";
     header("Location: ../../vue/Inscription.php");
     exit();
 } else {

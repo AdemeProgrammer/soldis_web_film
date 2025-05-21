@@ -1,6 +1,6 @@
 <?php
 class Bdd {
-    private $nomBDD = 'soldis_web_film';
+    private $nomBDD = 'aa_soldis_web_film';
     private $serveur = 'localhost';
     private $user= 'root';
     private $password = '';

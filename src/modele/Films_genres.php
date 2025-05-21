@@ -1,7 +1,4 @@
 <?php
-
-namespace modele;
-
 class Films_genres
 {
     private $ref_film;
@@ -38,4 +35,21 @@ class Films_genres
         $this->ref_genre = $ref_genre;
     }
     private $ref_genre;
+
+    public function __construct(array $donnee){
+        $this->hydrate($donnee);
+    }
+
+    public function hydrate(array $donnees)
+    {
+        foreach ($donnees as $key => $valeur)
+        {
+            $methode = 'set'.ucfirst($key);
+
+            if (method_exists($this, $methode))
+            {
+                $this->$methode($valeur);
+            }
+        }
+    }
 }

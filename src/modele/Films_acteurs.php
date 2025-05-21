@@ -1,7 +1,5 @@
 <?php
 
-namespace modele;
-
 class Films_acteurs
 {
     private $ref_film;
@@ -38,4 +36,21 @@ class Films_acteurs
         $this->ref_acteur = $ref_acteur;
     }
     private $ref_acteur;
+
+    public function __construct(array $donnee){
+        $this->hydrate($donnee);
+    }
+
+    public function hydrate(array $donnees)
+    {
+        foreach ($donnees as $key => $valeur)
+        {
+            $methode = 'set'.ucfirst($key);
+
+            if (method_exists($this, $methode))
+            {
+                $this->$methode($valeur);
+            }
+        }
+    }
 }

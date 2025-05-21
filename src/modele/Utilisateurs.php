@@ -1,7 +1,4 @@
 <?php
-
-namespace modele;
-
 class Utilisateurs
 {
     private $id_utilisateur;
@@ -111,4 +108,21 @@ class Utilisateurs
     private $mot_de_passe;
 
     private $role;
+
+    public function __construct(array $donnee){
+        $this->hydrate($donnee);
+    }
+
+    public function hydrate(array $donnees)
+    {
+        foreach ($donnees as $key => $valeur)
+        {
+            $methode = 'set'.ucfirst($key);
+
+            if (method_exists($this, $methode))
+            {
+                $this->$methode($valeur);
+            }
+        }
+    }
 }

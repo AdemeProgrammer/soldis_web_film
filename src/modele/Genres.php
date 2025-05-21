@@ -1,7 +1,5 @@
 <?php
 
-namespace modele;
-
 class Genres
 {
     private $id_genre;
@@ -57,4 +55,21 @@ class Genres
     private $nom;
 
     private $libelle;
+
+    public function __construct(array $donnee){
+        $this->hydrate($donnee);
+    }
+
+    public function hydrate(array $donnees)
+    {
+        foreach ($donnees as $key => $valeur)
+        {
+            $methode = 'set'.ucfirst($key);
+
+            if (method_exists($this, $methode))
+            {
+                $this->$methode($valeur);
+            }
+        }
+    }
 }
