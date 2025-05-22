@@ -26,6 +26,7 @@ $films = $filmsRepo->catalogueFilms();
             <?php
             if (isset($_SESSION['role']) && $_SESSION['role'] === 'Admin') {
                 echo '<a href="AjoutFilm.php" class="btn-ajouter-film">Ajouter un film</a>';
+                echo '<a href="ModifFilm.php" class="btn-ajouter-film">Modifer un film</a>';
             }
             ?>
             <a href="Deconnexion.php">Déconnexion</a>

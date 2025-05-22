@@ -1,0 +1,75 @@
+/* Import de la police Orbitron */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(#0b0c1b, #1a1c2f);
+    font-family: 'Orbitron', sans-serif;
+    color: #f0f8ff;
+}
+
+header {
+    background-color: #111;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+h1 {
+    color: #fff;
+    font-size: 2.5em;
+    text-shadow: 1px 1px 3px #000;
+    font-weight: bold;
+    text-align: center;
+}
+
+form {
+    max-width: 800px;
+    margin: 100px auto;
+    background-color: rgba(30, 30, 50, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #222;
+    color: #fff;
+}
+
+form button {
+    background-color: #4b6aff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #3558d7;
+}
+
+a {
+    color: #4b6aff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
