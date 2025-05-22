@@ -35,7 +35,7 @@ h1 {
     background-color: rgba(30, 30, 50, 0.9);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    width: 80%; /* Largeur étendue sur 80% de l'écran */
+    width: 80%;
     margin: 40px auto;
 }
 
@@ -46,8 +46,9 @@ h1 {
 }
 
 .film-details img {
-    width: 80%; /* L'image occupe 80% de la largeur de l'écran */
-    max-width: 500px; /* Limite la taille maximale de l'image */
+    width: 300px;
+    height: 450px;
+    object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     margin-bottom: 30px;
@@ -62,20 +63,40 @@ h1 {
 }
 
 .film-details a {
-    color: #4b6aff;
     text-decoration: none;
     font-weight: bold;
-    margin-top: 20px;
+    margin: 10px;
 }
 
-.film-details a:hover {
-    text-decoration: underline;
-    color: #fff;
-}
-
-a {
+.btn-action {
+    padding: 12px 25px;
+    background-color: #4b6aff;
+    border: none;
+    border-radius: 5px;
+    color: #f0f8ff;
+    font-size: 1em;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-shadow: 1px 1px 2px #000;
+    text-align: center;
     display: inline-block;
+}
+
+.btn-action:hover {
+    background-color: #3a58d7;
+    transform: scale(1.05);
+}
+
+.film-details .btn-container {
+    display: flex;
+    gap: 15px;
     margin-top: 30px;
+}
+
+.return-link {
+    display: inline-block;
+    margin-top: 40px;
     padding: 15px 30px;
     background-color: #4b6aff;
     border-radius: 5px;
@@ -85,7 +106,7 @@ a {
     transition: background-color 0.3s;
 }
 
-a:hover {
+.return-link:hover {
     background-color: #3a58d7;
 }
 
@@ -105,3 +126,5 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+
