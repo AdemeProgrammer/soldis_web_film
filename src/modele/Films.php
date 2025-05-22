@@ -109,6 +109,18 @@ class Films
     private $affiche_url;
 
     private $trailer_url;
+    private $genre;
+
+    public function getGenre()
+    {
+        return $this->genre;
+    }
+
+    public function setGenre($genre)
+    {
+        $this->genre = $genre;
+    }
+
 
     public function __construct(array $donnee){
         $this->hydrate($donnee);
@@ -118,12 +130,13 @@ class Films
     {
         foreach ($donnees as $key => $valeur)
         {
-            $methode = 'set'.ucfirst($key);
+            $keyCamelCase = str_replace(' ', '', ucwords(str_replace('_', ' ', $key)));
+            $methode = 'set' . $keyCamelCase;
 
-            if (method_exists($this, $methode))
-            {
+            if (method_exists($this, $methode)) {
                 $this->$methode($valeur);
             }
         }
     }
+
 }
