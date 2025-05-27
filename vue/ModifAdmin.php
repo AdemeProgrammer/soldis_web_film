@@ -33,23 +33,28 @@ if (isset($_GET['id_utilisateur'])) {
     <title>Modif de compte (Admin)</title>
     <link href="../assets/css/accueil.css" rel="stylesheet">
 </head>
-<form action="../src/traitement/trait_modif_admin.php" method="POST">
-    <input type="hidden" name="id_utilisateur" value="<?php echo $utilisateur['id_utilisateur']; ?>">
+<main>
+<table>
+    <form action="../src/traitement/trait_modif_admin.php" method="POST">
+        <input type="hidden" name="id_utilisateur" value="<?php echo $utilisateur['id_utilisateur']; ?>">
 
-    <label for="nom">Nom:</label>
-    <input type="text" name="nom" value="<?php echo ($utilisateur['nom']); ?>" required>
+        <label for="nom">Nom:</label>
+        <input type="text" name="nom" value="<?php echo ($utilisateur['nom']); ?>" required>
 
-    <label for="prenom">Prénom:</label>
-    <input type="text" name="prenom" value="<?php echo ($utilisateur['prenom']); ?>" required>
+        <label for="prenom">Prénom:</label>
+        <input type="text" name="prenom" value="<?php echo ($utilisateur['prenom']); ?>" required>
 
-    <label for="email">Email:</label>
-    <input type="email" name="email" value="<?php echo ($utilisateur['email']); ?>" required>
+        <label for="email">Email:</label>
+        <input type="email" name="email" value="<?php echo ($utilisateur['email']); ?>" required>
 
-    <label for="role">Rôle:</label>
-    <select name="role">
-        <option value="Client" <?php if ($utilisateur['role'] == 'Client') echo 'selected'; ?>>Client</option>
-        <option value="Admin" <?php if ($utilisateur['role'] == 'Admin') echo 'selected'; ?>>Administrateur</option>
-    </select>
+        <label for="role">Rôle:</label>
+        <select name="role">
+            <option value="Client" <?php if ($utilisateur['role'] == 'Client') echo 'selected'; ?>>Client</option>
+            <option value="Admin" <?php if ($utilisateur['role'] == 'Admin') echo 'selected'; ?>>Administrateur</option>
+        </select>
 
-    <input type="submit" value="Modifier le compte">
-</form>
+        <input type="submit" value="Modifier le compte">
+    </form>
+</table>
+
+</main>

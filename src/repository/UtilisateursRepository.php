@@ -62,4 +62,10 @@ class UtilisateursRepository{
             return false;
         }
     }
+    public function suppUtilisateurs($id_utilisateur) {
+        $sql = "DELETE FROM utilisateurs WHERE id_utilisateur = :id";
+        $req = $this->bdd->getBdd()->prepare($sql);
+        return $req->execute(['id' => $id_utilisateur]);
+    }
+
 }

@@ -18,7 +18,7 @@ $fantasyFilms = $filmsRepo->getFilmsByGenre('Fantaisie', 4);
 $musicFilms = $filmsRepo->getFilmsByGenre('Musique', 4);
 ?>
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,10 +28,13 @@ $musicFilms = $filmsRepo->getFilmsByGenre('Musique', 4);
 <body>
 <header>
     <h1>Soldis Web Film : <?= $_SESSION['nom'] ?> <?= $_SESSION['prenom'] ?></h1>
-    <nav>
+    <nav class="fade-in">
         <a href="#">Accueil</a>
         <a href="Catalogue.php">Catalogue</a>
-        <a href="ArchivesActeurs.php">Archives des acteurs</a>
+        <a href="ArchivesActeurs.php">Acteurs</a>
+        <?php if ($_SESSION['role'] === 'Admin'): ?>
+            <a href="AllUtilisateurs.php">Voir les utilisateurs</a>
+        <?php endif; ?>
         <a href="Deconnexion.php">Déconnexion</a>
     </nav>
 </header>
@@ -41,8 +44,8 @@ $musicFilms = $filmsRepo->getFilmsByGenre('Musique', 4);
         <h2>Bienvenue dans un monde cinématographique d'exception</h2>
     </section>
 
-    <section id="films" class="films-section">
-        <h3>Les films disponibles (voir plus dans le catalogue) :</h3>
+    <section class="films-section" id="random-films">
+        <h3>Films disponibles (voir plus dans le catalogue) :</h3>
         <div class="film-container">
             <?php foreach ($randomFilms as $film): ?>
                 <div class="film">
@@ -53,97 +56,31 @@ $musicFilms = $filmsRepo->getFilmsByGenre('Musique', 4);
             <?php endforeach; ?>
         </div>
     </section>
-    <br>
-    <hr>
-    <br>
-    <section id="anime-films" class="films-section">
-        <h3>Films d'animation japonaise (Anime) :</h3>
-        <div class="film-container">
-            <?php foreach ($animeFilms as $film): ?>
-                <div class="film">
-                    <a href="FilmsDetails.php?id=<?= $film['id_film'] ?>">
-                        <img src="<?= htmlspecialchars($film['affiche_url']) ?>" alt="<?= htmlspecialchars($film['titre']) ?>">
-                    </a>
-                </div>
-            <?php endforeach; ?>
-        </div>
-    </section>
-    <br>
-    <hr>
-    <br>
-    <section id="anime-films" class="films-section">
-        <h3>Films d'action :</h3>
-        <div class="film-container">
-            <?php foreach ($actionFilms as $film): ?>
-                <div class="film">
-                    <a href="FilmsDetails.php?id=<?= $film['id_film'] ?>">
-                        <img src="<?= htmlspecialchars($film['affiche_url']) ?>" alt="<?= htmlspecialchars($film['titre']) ?>">
-                    </a>
-                </div>
-            <?php endforeach; ?>
-        </div>
-    </section>
-    <br>
-    <hr>
-    <br>
-    <section id="anime-films" class="films-section">
-        <h3>Films de comédie :</h3>
-        <div class="film-container">
-            <?php foreach ($comedieFilms as $film): ?>
-                <div class="film">
-                    <a href="FilmsDetails.php?id=<?= $film['id_film'] ?>">
-                        <img src="<?= htmlspecialchars($film['affiche_url']) ?>" alt="<?= htmlspecialchars($film['titre']) ?>">
-                    </a>
-                </div>
-            <?php endforeach; ?>
-        </div>
-    </section>
-    <br>
-    <hr>
-    <br>
-    <section id="anime-films" class="films-section">
-        <h3>Films historique :</h3>
-        <div class="film-container">
-            <?php foreach ($historyFilms as $film): ?>
-                <div class="film">
-                    <a href="FilmsDetails.php?id=<?= $film['id_film'] ?>">
-                        <img src="<?= htmlspecialchars($film['affiche_url']) ?>" alt="<?= htmlspecialchars($film['titre']) ?>">
-                    </a>
-                </div>
-            <?php endforeach; ?>
-        </div>
-    </section>
-    <br>
-    <hr>
-    <br>
-    <section id="anime-films" class="films-section">
-        <h3>Films fantaisie :</h3>
-        <div class="film-container">
-            <?php foreach ($fantasyFilms as $film): ?>
-                <div class="film">
-                    <a href="FilmsDetails.php?id=<?= $film['id_film'] ?>">
-                        <img src="<?= htmlspecialchars($film['affiche_url']) ?>" alt="<?= htmlspecialchars($film['titre']) ?>">
-                    </a>
-                </div>
-            <?php endforeach; ?>
-        </div>
-    </section>
-    <br>
-    <hr>
-    <br>
-    <section id="anime-films" class="films-section">
-        <h3>musiques :</h3>
-        <div class="film-container">
-            <?php foreach ($musicFilms as $film): ?>
-                <div class="film">
-                    <a href="FilmsDetails.php?id=<?= $film['id_film'] ?>">
-                        <img src="<?= htmlspecialchars($film['affiche_url']) ?>" alt="<?= htmlspecialchars($film['titre']) ?>">
-                    </a>
-                </div>
-            <?php endforeach; ?>
-        </div>
-    </section>
 
+    <?php
+    $sections = [
+        'anime-films' => ['title' => 'Films d\'animation japonaise (Anime)', 'data' => $animeFilms],
+        'action-films' => ['title' => 'Films d\'action', 'data' => $actionFilms],
+        'comedie-films' => ['title' => 'Films de comédie', 'data' => $comedieFilms],
+        'history-films' => ['title' => 'Films historique', 'data' => $historyFilms],
+        'fantasy-films' => ['title' => 'Films fantaisie', 'data' => $fantasyFilms],
+        'music-films' => ['title' => 'Films musicaux', 'data' => $musicFilms],
+    ];
+
+    foreach ($sections as $id => $section): ?>
+        <section class="films-section" id="<?= $id ?>">
+            <h3><?= $section['title'] ?> :</h3>
+            <div class="film-container">
+                <?php foreach ($section['data'] as $film): ?>
+                    <div class="film">
+                        <a href="FilmsDetails.php?id=<?= $film['id_film'] ?>">
+                            <img src="<?= htmlspecialchars($film['affiche_url']) ?>" alt="<?= htmlspecialchars($film['titre']) ?>">
+                        </a>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </section>
+    <?php endforeach; ?>
 </main>
 
 <footer>
