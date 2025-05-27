@@ -11,6 +11,17 @@ class FilmsRepository
     {
         $this->bdd = new Bdd();
     }
+    public function getFilmsByGenre($genre, $limit = 4)
+    {
+        $sql = "SELECT * FROM films WHERE genre = :genre ORDER BY RAND() LIMIT :limit";
+        $stmt = $this->bdd->getBdd()->prepare($sql);
+        $stmt->bindValue(':genre', $genre, PDO::PARAM_STR);
+        $stmt->bindValue(':limit', (int) $limit, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
 
     public function ajoutFilms(Films $films)
     {

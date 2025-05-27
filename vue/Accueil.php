@@ -10,6 +10,12 @@ if (!isset($_SESSION['email'])) {
 
 $filmsRepo = new FilmsRepository();
 $randomFilms = $filmsRepo->getRandomFilms(6);
+$animeFilms = $filmsRepo->getFilmsByGenre('Anime', 4);
+$actionFilms = $filmsRepo->getFilmsByGenre('Action', 4);
+$comedieFilms = $filmsRepo->getFilmsByGenre('Comédie', 4);
+$historyFilms = $filmsRepo->getFilmsByGenre('Historique', 4);
+$fantasyFilms = $filmsRepo->getFilmsByGenre('Fantaisie', 4);
+$musicFilms = $filmsRepo->getFilmsByGenre('Musique', 4);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -25,6 +31,7 @@ $randomFilms = $filmsRepo->getRandomFilms(6);
     <nav>
         <a href="#">Accueil</a>
         <a href="Catalogue.php">Catalogue</a>
+        <a href="ArchivesActeurs.php">Archives des acteurs</a>
         <a href="Deconnexion.php">Déconnexion</a>
     </nav>
 </header>
@@ -46,6 +53,97 @@ $randomFilms = $filmsRepo->getRandomFilms(6);
             <?php endforeach; ?>
         </div>
     </section>
+    <br>
+    <hr>
+    <br>
+    <section id="anime-films" class="films-section">
+        <h3>Films d'animation japonaise (Anime) :</h3>
+        <div class="film-container">
+            <?php foreach ($animeFilms as $film): ?>
+                <div class="film">
+                    <a href="FilmsDetails.php?id=<?= $film['id_film'] ?>">
+                        <img src="<?= htmlspecialchars($film['affiche_url']) ?>" alt="<?= htmlspecialchars($film['titre']) ?>">
+                    </a>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </section>
+    <br>
+    <hr>
+    <br>
+    <section id="anime-films" class="films-section">
+        <h3>Films d'action :</h3>
+        <div class="film-container">
+            <?php foreach ($actionFilms as $film): ?>
+                <div class="film">
+                    <a href="FilmsDetails.php?id=<?= $film['id_film'] ?>">
+                        <img src="<?= htmlspecialchars($film['affiche_url']) ?>" alt="<?= htmlspecialchars($film['titre']) ?>">
+                    </a>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </section>
+    <br>
+    <hr>
+    <br>
+    <section id="anime-films" class="films-section">
+        <h3>Films de comédie :</h3>
+        <div class="film-container">
+            <?php foreach ($comedieFilms as $film): ?>
+                <div class="film">
+                    <a href="FilmsDetails.php?id=<?= $film['id_film'] ?>">
+                        <img src="<?= htmlspecialchars($film['affiche_url']) ?>" alt="<?= htmlspecialchars($film['titre']) ?>">
+                    </a>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </section>
+    <br>
+    <hr>
+    <br>
+    <section id="anime-films" class="films-section">
+        <h3>Films historique :</h3>
+        <div class="film-container">
+            <?php foreach ($historyFilms as $film): ?>
+                <div class="film">
+                    <a href="FilmsDetails.php?id=<?= $film['id_film'] ?>">
+                        <img src="<?= htmlspecialchars($film['affiche_url']) ?>" alt="<?= htmlspecialchars($film['titre']) ?>">
+                    </a>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </section>
+    <br>
+    <hr>
+    <br>
+    <section id="anime-films" class="films-section">
+        <h3>Films fantaisie :</h3>
+        <div class="film-container">
+            <?php foreach ($fantasyFilms as $film): ?>
+                <div class="film">
+                    <a href="FilmsDetails.php?id=<?= $film['id_film'] ?>">
+                        <img src="<?= htmlspecialchars($film['affiche_url']) ?>" alt="<?= htmlspecialchars($film['titre']) ?>">
+                    </a>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </section>
+    <br>
+    <hr>
+    <br>
+    <section id="anime-films" class="films-section">
+        <h3>musiques :</h3>
+        <div class="film-container">
+            <?php foreach ($musicFilms as $film): ?>
+                <div class="film">
+                    <a href="FilmsDetails.php?id=<?= $film['id_film'] ?>">
+                        <img src="<?= htmlspecialchars($film['affiche_url']) ?>" alt="<?= htmlspecialchars($film['titre']) ?>">
+                    </a>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </section>
+
 </main>
 
 <footer>

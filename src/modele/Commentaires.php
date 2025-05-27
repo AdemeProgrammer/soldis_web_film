@@ -3,125 +3,90 @@
 class Commentaires
 {
     private $id_commentaire;
-
     private $note;
-
-    private $commentaire;
-
+    private $libelle;
     private $date;
-
     private $ref_film;
-
     private $ref_utilisateur;
 
-    /**
-     * @return mixed
-     */
+    // Getters et setters
+
     public function getIdCommentaire()
     {
         return $this->id_commentaire;
     }
 
-    /**
-     * @param mixed $id_commentaire
-     */
     public function setIdCommentaire($id_commentaire)
     {
         $this->id_commentaire = $id_commentaire;
     }
 
-    /**
-     * @return mixed
-     */
     public function getNote()
     {
         return $this->note;
     }
 
-    /**
-     * @param mixed $note
-     */
     public function setNote($note)
     {
         $this->note = $note;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getCommentaire()
+    public function getLibelle()
     {
-        return $this->commentaire;
+        return $this->libelle;
     }
 
-    /**
-     * @param mixed $commentaire
-     */
-    public function setCommentaire($commentaire)
+    public function setLibelle($libelle)
     {
-        $this->commentaire = $commentaire;
+        $this->libelle = $libelle;
     }
 
-    /**
-     * @return mixed
-     */
     public function getDate()
     {
         return $this->date;
     }
 
-    /**
-     * @param mixed $date
-     */
     public function setDate($date)
     {
         $this->date = $date;
     }
 
-    /**
-     * @return mixed
-     */
     public function getRefFilm()
     {
         return $this->ref_film;
     }
 
-    /**
-     * @param mixed $ref_film
-     */
     public function setRefFilm($ref_film)
     {
         $this->ref_film = $ref_film;
     }
 
-    /**
-     * @return mixed
-     */
     public function getRefUtilisateur()
     {
         return $this->ref_utilisateur;
     }
 
-    /**
-     * @param mixed $ref_utilisateur
-     */
     public function setRefUtilisateur($ref_utilisateur)
     {
         $this->ref_utilisateur = $ref_utilisateur;
     }
 
-    public function __construct(array $donnee){
-        $this->hydrate($donnee);
+    // Constructeur avec hydrate
+    public function __construct(array $donnees = [])
+    {
+        $this->hydrate($donnees);
     }
 
+    /**
+     * Hydrate en convertissant les clés snake_case en camelCase pour appeler les setters
+     */
     public function hydrate(array $donnees)
     {
-        foreach ($donnees as $key => $valeur)
-        {
-            $methode = 'set'.ucfirst($key);
+        foreach ($donnees as $key => $valeur) {
+            $keyCamelCase = str_replace(' ', '', ucwords(str_replace('_', ' ', $key)));
+            $methode = 'set' . $keyCamelCase;
 
-            if (method_exists($this, $methode))
-            {
+            if (method_exists($this, $methode)) {
                 $this->$methode($valeur);
             }
         }

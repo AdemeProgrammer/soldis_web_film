@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(180deg, #0a0b17 0%, #0e1020 100%);
+    color: #f0f0f0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+form {
+    background-color: #141627;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(75, 106, 255, 0.15);
+    max-width: 420px;
+    margin: 40px auto;
+}
+
+label {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    display: block;
+    color: #cfd7ff;
+}
+
+input[type="text"],
+input[type="url"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 1em;
+    border-radius: 6px;
+    border: 1px solid #4b6aff33;
+    background-color: #1f2133;
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+}
+
+input[type="text"]::placeholder,
+input[type="url"]::placeholder,
+textarea::placeholder {
+    color: #8a95b1;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4b6aff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: 'Orbitron', sans-serif;
+}
+
+button:hover {
+    background-color: #3a58d7;
+}
+
+/* ===== HEADER STYLÉ ===== */
+
+.site-header {
+    background: rgba(10, 10, 30, 0.95);
+    padding: 20px 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    color: #4b6aff;
+    text-shadow: 0 0 10px #4b6aff88;
+    margin-bottom: 10px;
+}
+
+.main-nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    color: #eee;
+    text-decoration: none;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.nav-item:hover {
+    background: #4b6aff;
+    color: white;
+    box-shadow: 0 0 10px #4b6aff99;
+}
+
+.nav-item.active {
+    background: #4b6aff;
+    color: white;
+}
+
+.logout {
+    background: #ff4b4b;
+}
+
+.logout:hover {
+    background: #e33;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-nav .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+}
+

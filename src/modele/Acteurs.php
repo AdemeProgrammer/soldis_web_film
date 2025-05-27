@@ -46,12 +46,16 @@ class Acteurs
     {
         foreach ($donnees as $key => $valeur)
         {
-            $methode = 'set'.ucfirst($key);
+            $parts = explode('_', $key);
+            $parts = array_map('ucfirst', $parts);
+            $methode = 'set' . implode('', $parts); // "setNomComplet"
 
-            if (method_exists($this, $methode))
-            {
+            if (method_exists($this, $methode)) {
                 $this->$methode($valeur);
+            } else {
+                echo "Méthode $methode non trouvée<br>"; // pour debug
             }
         }
     }
+
 }

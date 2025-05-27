@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(#0b0c1b, #1a1c2f);
+    color: #f0f8ff;
+    min-height: 100vh;
+}
+
+/* Header et navbar */
+header {
+    background-color: #111;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #fff;
+    text-shadow: 1px 1px 3px #000;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 18px;
+    background-color: #444;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #4b6aff;
+    transform: scale(1.05);
+}
+
+.btn-ajouter-film {
+    background-color: #28a745;
+}
+
+.btn-ajouter-film:hover {
+    background-color: #218838;
+}
+
+/* Contenu principal */
+main {
+    padding: 120px 20px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Section acteur */
+.acteur-details {
+    background-color: rgba(30, 30, 50, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.acteur-details h2 {
+    font-size: 2em;
+    color: #4b6aff;
+    margin-bottom: 20px;
+}
+
+/* Liste des films */
+.film-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.film-card {
+    background-color: rgba(30, 30, 50, 0.95);
+    border-radius: 10px;
+    width: 200px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.film-card img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #000;
+}
+
+.film-card h3 {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+.film-card:hover {
+    transform: scale(1.05);
+}
+
+.film-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Footer */
+footer {
+    background-color: #0c0d1c;
+    text-align: center;
+    padding: 20px;
+    color: #ccc;
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+footer a {
+    color: #4b6aff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

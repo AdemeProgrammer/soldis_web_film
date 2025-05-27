@@ -22,7 +22,7 @@ $films = $filmsRepo->catalogueFilms();
         <h1>Catalogue de films</h1>
         <nav>
             <a href="Accueil.php">Accueil</a>
-            <a href="#">Catalogue</a>
+            <a href="ArchivesActeurs.php">Les acteurs</a>
             <?php
             if (isset($_SESSION['role']) && $_SESSION['role'] === 'Admin') {
                 echo '<a href="AjoutFilm.php" class="btn-ajouter-film">Ajouter un film</a>';

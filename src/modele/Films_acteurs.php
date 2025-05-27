@@ -1,43 +1,53 @@
 <?php
-
-class Films_acteurs
+class FilmsActeurs
 {
     private $ref_film;
+    private $ref_acteur;
+    private $role;
+    private $img_acteur;
 
-    /**
-     * @return mixed
-     */
     public function getRefFilm()
     {
         return $this->ref_film;
     }
 
-    /**
-     * @param mixed $ref_film
-     */
     public function setRefFilm($ref_film)
     {
         $this->ref_film = $ref_film;
     }
 
-    /**
-     * @return mixed
-     */
     public function getRefActeur()
     {
         return $this->ref_acteur;
     }
 
-    /**
-     * @param mixed $ref_acteur
-     */
     public function setRefActeur($ref_acteur)
     {
         $this->ref_acteur = $ref_acteur;
     }
-    private $ref_acteur;
 
-    public function __construct(array $donnee){
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    public function setRole($role)
+    {
+        $this->role = $role;
+    }
+
+    public function getImgActeur()
+    {
+        return $this->img_acteur;
+    }
+
+    public function setImgActeur($img_acteur)
+    {
+        $this->img_acteur = $img_acteur;
+    }
+
+    public function __construct(array $donnee)
+    {
         $this->hydrate($donnee);
     }
 
