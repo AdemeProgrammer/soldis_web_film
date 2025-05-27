@@ -1,3 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    background-color: #101020 !important;
+    color: #e0e7ff;
+    font-family: 'Orbitron', monospace, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #1a1c3d;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+header h1 {
+    color: #8ea0ff;
+    font-size: 2.5em;
+    margin: 0;
+    text-shadow: 0 0 10px #4b6aff;
+}
+
+main {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.film-details {
+    background-color: rgba(25, 25, 45, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+}
+
+.film-details h2 {
+    color: #7fa1ff;
+    font-size: 2em;
+    text-shadow: 0 0 8px #4b6aff;
+    margin-top: 0;
+}
+
+.film-details p {
+    margin-bottom: 15px;
+}
+
+.film-details img {
+    max-width: 200px;
+    border-radius: 10px;
+    margin: 15px 0;
+    box-shadow: 0 0 15px rgba(75, 106, 255, 0.5);
+}
+
+.film-details a {
+    color: whitesmoke;
+    text-decoration: underline;
+}
+
+.film-details a:hover {
+    color: #7fa1ff;
+}
+
+.acteurs-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.acteur-card {
+    background-color: #1f2138;
+    padding: 20px;
+    border-radius: 12px;
+    width: calc(50% - 20px);
+    box-shadow: 0 4px 12px rgba(75, 106, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.acteur-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 18px rgba(75, 106, 255, 0.4);
+}
+
+.acteur-card h4 {
+    color: #9bb0ff;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.acteur-card p {
+    color: #dbe4ff;
+}
+
+.acteur-img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 0 10px rgba(75, 106, 255, 0.3);
+}
+
+.btn-container {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.btn-action {
+    background-color: #4b6aff;
+    color: #f0f8ff;
+    padding: 12px 25px;
+    margin: 0 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.btn-action:hover {
+    background-color: #354ecc;
+    transform: scale(1.05);
+}
+
+a[href="Catalogue.php"] {
+    display: inline-block;
+    margin-top: 40px;
+    text-align: center;
+    color: #9bb0ff;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-decoration: underline;
+}
+
+a[href="Catalogue.php"]:hover {
+    color: #c0c8ff;
+}
+
+footer {
+    background-color: #1a1c3d;
+    color: #9bb0ff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.5);
+}
+
 .commentaires-section {
     background-color: rgba(40, 40, 70, 0.95);
     padding: 30px 40px;
